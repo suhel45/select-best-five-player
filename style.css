@@ -1,0 +1,14 @@
+body{
+    background-color:rgba(51, 44, 44, 0.801);
+}
+.header-section{
+    background-color: #000000;
+
+}
+.header-text{
+    color: #FF5E19;
+    font-size: 50px;
+}
+.card-bg{
+    background-color: #0D0D0D;
+}
