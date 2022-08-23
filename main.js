@@ -14,13 +14,26 @@ function callPlayerNameId(inputId,event){
     event.target.setAttribute('disabled','');
     }
    document.getElementById('calculate-btn').addEventListener('click',function(){
-   const perPlayerCost = parseFloat(document.getElementById('player-text').value) ;
-   const allPlayerCost = count*perPlayerCost;
+   const perPlayerCost = (document.getElementById('player-text').value) ;
+   const perPlayerCostt = parseFloat(perPlayerCost);
+   const allPlayerCost = count*perPlayerCostt;
+    if(isNaN(perPlayerCost)){
+        alert("Enter a number value");
+    }
+    else{
       document.getElementById('player-cost').innerText = allPlayerCost;
+    }
       document.getElementById('calculate-total-btn').addEventListener('click',function(){
-        const managerCost = parseFloat(document.getElementById('manager-text').value);
-        const coacheCost = parseFloat(document.getElementById('coach-text').value);
+        const managerCostString = document.getElementById('manager-text').value;
+        const managerCost = parseFloat(managerCostString);
+        const coacheCostString = document.getElementById('coach-text').value;
+        const coacheCost = parseFloat(coacheCostString);
+        if(isNaN(managerCostString) || isNaN(coacheCostString)){
+            alert("Ener a number");
+        }
+        else{
         document.getElementById('total-cost').innerText = allPlayerCost + managerCost + coacheCost;
+        }
 
       })
    })
