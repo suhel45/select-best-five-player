@@ -1,13 +1,18 @@
-let count = 0;
+let count,cont = 0;
 function callPlayerNameId(inputId,event){
+    cont++;
+    if(cont>5){
+        alert('sorry! You can not add more five');
+    }
+    else{
+        count = cont;
     const playerText = document.getElementById(inputId).innerText;
     const li = document.createElement('li');
       li.innerText = playerText;
     const olList = document.getElementById('ol-list');
     olList.appendChild(li);
     event.target.setAttribute('disabled','');
-   count += 1;
-   
+    }
    document.getElementById('calculate-btn').addEventListener('click',function(){
    const perPlayerCost = parseFloat(document.getElementById('player-text').value) ;
    const allPlayerCost = count*perPlayerCost;
